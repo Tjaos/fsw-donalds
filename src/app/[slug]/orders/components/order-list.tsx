@@ -1,9 +1,7 @@
-"use client";
 import { OrderStatus, Prisma } from "@prisma/client";
 import { Separator } from "@radix-ui/react-separator";
 import { ChevronLeftIcon, ScrollTextIcon } from "lucide-react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -37,13 +35,10 @@ const getStatusLabel = (status: OrderStatus) => {
 }
 
 const OrderList = ({orders}: OrderListProps) => {
-    
-    const router = useRouter();
-    const handleBackClick = () => router.back();
 
     return ( 
         <div className="space-y-6 p-6">
-            <Button size="icon" variant="secondary" className="rounded-full" onClick={handleBackClick}>
+            <Button size="icon" variant="secondary" className="rounded-full">
                 <ChevronLeftIcon/>
             </Button>
             <div className="flex items-center gap-3">
